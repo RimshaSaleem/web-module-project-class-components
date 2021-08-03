@@ -12,7 +12,7 @@ const TodoList = props => {
 
     return(
         <div className='your-list'>
-            <h2>List Items</h2>
+            <h2>List Items : MVP</h2>
             <button onClick={handleClick}>Clear All Completed</button>
             <div>
                 {props.AllData.map(item => {
