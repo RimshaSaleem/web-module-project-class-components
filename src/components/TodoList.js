@@ -3,10 +3,30 @@
 import React from 'react';
 import Todo from './Todo';
 
-export default function ListItem(props){
-    return (
-        <div>
-            
+// feel free to change this component.js into TodoList.js
+const TodoList = props => {
+
+    const handleClick = () => {
+        props.clearCompleted()
+    }
+
+    return(
+        <div className='your-list'>
+            <h2>List Items</h2>
+            <button onClick={handleClick}>Clear All Completed</button>
+            <div>
+                {props.AllData.map(item => {
+                    return (
+                        <Todo 
+                            toggleItem={props.toggleItem}
+                            key={item.id}
+                            item={item} 
+                        />
+                    )
+                })}   
+            </div>
         </div>
     )
 }
+
+export default TodoList;
